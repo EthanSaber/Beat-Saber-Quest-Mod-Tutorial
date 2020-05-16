@@ -7,10 +7,13 @@
 #include "../extern/beatsaber-hook/shared/utils/utils.h"
 MAKE_HOOK_OFFSETLESS(FlickeringNeonSign_Start, void, Il2CppObject* self) {
 
-    float _minOffDelay = CRASH_UNLESS(il2cpp_utils::GetFieldValue<float>(self, "_minOffDelay"));
-    float _maxOnDelay = CRASH_UNLESS(il2cpp_utils::GetFieldValue<float>(self, "_maxOnDelay"));
-    _minOffDelay = 99999999999999;
-    _maxOnDelay = 0;
+  il2cpp_utils::SetFieldValue(self, "_minOffDelay", 999999999999.0f);
+  il2cpp_utils::SetFieldValue(self, "_maxOffDelay", 999999999999.0f);
+  il2cpp_utils::SetFieldValue(self, "_minOnDelay", 0.0f);
+  il2cpp_utils::SetFieldValue(self, "_maxOnDelay", 0.0f);
+  
+  FlickeringNeonSign_Start(self);
+
 }
 
 __attribute__((constructor)) void lib_main() {
